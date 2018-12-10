@@ -171,7 +171,7 @@
                 </tr>
                 <tr>
                   <td>9</td>
-                  <td>thalach</td>
+                  <td>exang</td>
                   <td>Menyebabkan angina (sesak pada dada); 0 : tidak, 1 : ya</td>
                 </tr>
                 <tr>
@@ -233,17 +233,90 @@
     </section>
 
     <section id="predict">
-      <div class="container-fluid p-0  text-center">
-      <h2 class="section-heading">Prediksi Sekarang</h2>
-            <hr class="light my-4">
-        <div class="row no-gutters popup-gallery down">
-          <div class="col-lg-6 col-sm-8">
-            <form class="bayes-form">
-        		<input type="text" name="firstName" placeholder="Name"></input><br>
-        		<input type="number" name="Kolesterol" placeholder="Kolesterol"></input><br><br>
-        		<button class="btn btn-xl js-scroll-trigger" type="submit">Submit</button>
-        	</form>
-        	<button class="btn-bayes btn btn-xl js-scroll-trigger">With Bayes</button>
+      <div class="container-fluid p-0 text-center">
+      <h2 class="section-heading text-center">Prediksi Sekarang</h2>
+        <hr class="light my-4">
+        <div class="container">
+          <div class="form-group row ">
+            <label for="inputNama" class="col-sm-3 col-form-label" style="text-align: right;">Nama</label>
+            <div class="col-sm-6">
+              <input type="nama" class="form-control" id="inputNama" placeholder="Nama">
+            </div>
+          </div>
+          <div class="form-group row ">
+            <label for="inputUmur" class="col-sm-3 col-form-label" style="text-align: right;">Umur</label>
+            <div class="col-sm-6">
+              <input type="number" class="form-control" id="inputUmur" placeholder="Umur">
+            </div>
+          </div>
+          <div class="form-group row ">
+            <label for="inputJK" class="col-sm-3 col-form-label" style="text-align: right;">Jenis Kelamin</label>
+            <div class="form-group col-sm-6">
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>Pria</option>
+                <option>Wanita</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row ">
+            <label for="inputNyeriData" class="col-sm-3 col-form-label" style="text-align: right;">Jenis Nyeri Dada</label>
+            <div class="form-group col-sm-6">
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1 : Khas angina</option>
+                <option>2 : Angina atipikal</option>
+                <option>3 : Nyeri non-angina</option>
+                <option>4 : Tanpa Gejala</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row ">
+            <label for="inputTDarah" class="col-sm-3 col-form-label" style="text-align: right;">Tekanan Darah</label>
+            <div class="col-sm-6">
+              <input type="number" class="form-control" id="inputTDarah" placeholder="Tekanan Darah (mm/Hg)">
+            </div>
+          </div>
+          <div class="form-group row ">
+            <label for="inputKolestrol" class="col-sm-3 col-form-label" style="text-align: right;">Kolestrol</label>
+            <div class="col-sm-6">
+              <input type="number" class="form-control" id="inputKolestrol" placeholder="Kolestrol (mg/dl)">
+            </div>
+          </div>
+          <div class="form-group row ">
+            <label for="inputGulaDarah" class="col-sm-3 col-form-label" style="text-align: right;">Gula Darah</label>
+            <div class="col-sm-6">
+              <input type="number" class="form-control" id="inputGulaDarah" placeholder="Gula Darah > 120 mg/dl">
+            </div>
+          </div>
+          <div class="form-group row ">
+            <label for="inputNyeriData" class="col-sm-3 col-form-label" style="text-align: right;">Hasil Elektrokardiografi</label>
+            <div class="form-group col-sm-6">
+              <select class="form-control" id="exampleFormControlSelect1">
+                 <option>0 : normal</option>
+                <option>1 : memiliki kelainan</option>
+                <option>2 : kemungkinan hipertrofi kiri</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row ">
+            <label for="inputDenyutNadi" class="col-sm-3 col-form-label" style="text-align: right;">Max denyut nadi tercapai</label>
+            <div class="col-sm-6">
+              <input type="number" class="form-control" id="inputDenyutNadi" placeholder="Max denyut nadi">
+            </div>
+          </div>
+          <div class="form-group row ">
+            <label for="inputSesak" class="col-sm-3 col-form-label" style="text-align: right;">Sesak pada dada</label>
+            <div class="form-group col-sm-6">
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>0 : Ya</option>
+                <option>1 : Tidak</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row ">
+            <label for="inputDepresiST" class="col-sm-3 col-form-label" style="text-align: right;">Depresi ST</label>
+            <div class="col-sm-6">
+              <input type="number" class="form-control" id="inputDepresiST" placeholder="Depresi ST">
+            </div>
           </div>
         </div>
       </div>
