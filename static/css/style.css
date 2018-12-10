@@ -1,0 +1,27 @@
+.knn-form {
+	display: none;
+	margin-bottom: 10px;
+}
+
+.bayes-form {
+	display: none;
+	margin-bottom: 10px;
+}
+
+.theadbg {
+	background: #e30606;
+}
+
+table {
+	counter-reset: tableCount;
+}
+
+
+.hPedding {
+	padding: 50px;
+}
+
+.pAbout {
+	padding-top: 20px;
+}
+

@@ -1,0 +1,76 @@
+1. age
+2. sex 
+      - 1 : male , 0 : female
+3. cp (Chest pain type)
+      - 1 : typical angina 
+      - 2 : atypical angina
+      - 3 : non-anginal pain
+      - 4 : asymptomatic
+4. trestbps : resting blood pressure (in mm Hg on admission to the hospital)
+5. chol : serum cholestoral in mg/dl
+6. fbs : (fasting blood sugar > 120 mg/dl)
+      - 1 : true
+      - 0 : false
+7. restecg : resting electrocardiographic results
+      - 0 : normal
+      - 1 : having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV)
+      - 2 : showing probable or definite left ventricular hypertrophy by Estes' criteria
+8. thalach : maximum heart rate achieved
+9. exang : exercise induced angina
+      - 0 : no
+      - 1 : yes
+10. oldpeak : ST depression induced by exercise relative to rest
+11. num : diagnosis of heart disease (angiographic disease status)
+      - 0 : < 50% diameter narrowing
+      - 1 : > 50% diameter narrowing (in any major vessel: attributes 59 through 68 are vessels)
+
+1. umur
+2. seks
+      - 1: pria, 0: wanita
+3. cp (Jenis nyeri dada)
+      - 1: khas angina
+      - 2: angina atipikal
+      - 3: nyeri non-angina
+      - 4: tanpa gejala
+4. trestbps: tekanan darah istirahat (dalam mm Hg saat masuk ke rumah sakit)
+5. chol: serum kolestoral dalam mg / dl
+6. fbs: (gula darah puasa> 120 mg / dl)
+      - 1: benar
+      - 0: salah
+7. restecg: istirahat hasil elektrokardiografi
+      - 0: normal
+      - 1: memiliki kelainan gelombang ST-T (inversi gelombang T dan / atau elevasi ST atau depresi> 0,05 mV)
+      - 2: menunjukkan kemungkinan hipertrofi ventrikel kiri dengan kriteria Estes
+8. thalach: denyut jantung maksimal tercapai
+9. exang: olahraga yang disebabkan angina
+      - 0: tidak
+      - 1: ya
+10. oldpeak: depresi ST diinduksi oleh latihan relatif untuk beristirahat
+11. num: diagnosis penyakit jantung (status penyakit angiografi)
+      - 0: <50% diameter menyempit
+      - 1:> Penyempitan diameter 50% (dalam kapal besar apa pun: atribut 59 hingga 68 adalah bejana)
+
+
+Age
+Sex
+chest pain type
+resting blood pressure
+serum cholestoral
+fasting blood sugar
+resting electrocardiographic results
+maximum heart rate achieved
+exercise induced angina
+ST depression
+diagnosis of heart disease
+            
+                  <th>Umur</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Jenis Nyeri Dada</th>
+                  <th>Tekanan Darah</th>
+                  <th>Serum Kolestrol</th>
+                  <th>Gula Darah</th>
+                  <th>Hasil Elektrokardiografi</th>
+                  <th>Max Rate Denyut Nadi</th>
+                  <th>Olahraga Angina</th>
+                  <th>ST depression</th>
+                  <th>diagnosis of heart disease</th>
