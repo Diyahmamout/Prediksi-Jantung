@@ -4,10 +4,18 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score
+from flask import request
 import pandas as pd
 import csv
+from sklearn.naive_bayes import GaussianNB
+import numpy as np
+from joblib import dump, load
+import array
 
 app = Flask(__name__)
+
+
+clf = load('heart.joblib')
 
 @app.route('/')
 def index():
@@ -67,6 +75,49 @@ def index():
 	print("KNN with K = 11 : " + str(round((score5*100), 2)) + '%')
 
 	return render_template("base.html", data_sample=enumerate(data_sample))
+
+@app.route('/upload_data', methods=['POST'])
+def upload_data():
+	if (request.method == 'POST'):
+		data = request.form.to_dict([])
+		nama = data['nama']
+		umur = pd.to_numeric(data['umur'])
+		sex = pd.to_numeric(data['sex'])
+		nyeri = pd.to_numeric(data['nyeri'])
+		tekanan = pd.to_numeric(data['tekanan_darah'])
+		kolesterol = pd.to_numeric(data['kolesterol'])
+		guldar = pd.to_numeric(data['guldar'])
+		elektrokardiografi = pd.to_numeric(data['elektrokardiografi'])
+		denyut = pd.to_numeric(data['denyut'])
+		sesak = pd.to_numeric(data['sesak'])
+		depresi = pd.to_numeric(data['depresi'])
+		
+		
+		
+		
+		print(data['nama'])
+		print(data['umur'])
+		print(data['sex'])
+		print(data['nyeri'])
+		print(data['tekanan_darah'])
+		print(data['kolesterol'])
+		print(data['guldar'])
+		print(data['elektrokardiografi'])
+		print(data['denyut'])
+		print(data['sesak'])
+		print(data['depresi'])
+
+		xPredict = np.array([[umur, sex, nyeri, tekanan, kolesterol, guldar, elektrokardiografi, denyut, sesak, depresi]])
+		xPredict = xPredict.ravel()
+		predict = [xPredict]
+
+		#xPredict = [[54,0,3,130,294,0,1,100,1,0]]
+		print("Hasil:")
+
+		print(clf.predict(predict))
+
+
+	return render_template('base.html')
 
 if __name__ == "__main__":
 	app.run(debug=True)
