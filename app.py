@@ -76,7 +76,7 @@ def index():
 
 	return render_template("base.html", data_sample=enumerate(data_sample))
 
-@app.route('/upload_data', methods=['POST'])
+@app.route('/', methods=['POST'])
 def upload_data():
 	if (request.method == 'POST'):
 		data = request.form.to_dict([])
