@@ -189,11 +189,46 @@
     </div>
   </section>
 
-  <section style="background-color:#e30606" id="predict">
-    <div class="container-fluid p-0 text-center text-white">
+  <section style="background-color:#e30606" id="result">
+    <div class="container text-white">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Bagaimana Hasilnya ?</h2>
+          <hr class="my-4">
+        </div>
+      </div>
+    </div>
+    <div class="container text-black text-center w-50">
+        <div class="card">
+          <div class="card-header">Model 1</div>
+          <div class="card-body">
+              <p>Dataset yang digunakan sebanyak 294</p>
+              <p>Akurasi : {{ acc1 }}%</p>
+          </div>
+        </div>
+        <div class="card" style="margin-top: 20px;">
+          <div class="card-header">Model 2</div>
+          <div class="card-body">
+              <p>Dataset yang digunakan sebanyak 250</p>
+              <p>Akurasi : {{ acc2 }}%</p>
+          </div>
+        </div>
+        <div class="card" style="margin-top: 20px;">
+          <div class="card-header">Model 3</div>
+          <div class="card-body">
+              <p>Dataset yang digunakan sebanyak 200</p>
+              <p>Akurasi : {{ acc3 }}%</p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+
+  <section id="predict">
+    <div class="container-fluid p-0 text-center">
       <h2 class="section-heading text-center">Prediksi Sekarang</h2>
       <hr class="light my-4">
-      <form id="upload-form" action="{{ url_for('upload_data', _anchor='result') }}" method="POST" >
+      <form id="upload-form" action="{{ url_for('index', _anchor='predict') }}" method="POST" >
         <div class="container">
           <div class="form-group row ">
             <label for="inputNama" class="col-sm-3 col-form-label" style="text-align: right;">Nama</label>
@@ -280,47 +315,43 @@
           </div>
         </div>
         <div class="container">
-          <button class="btn btn-primary" type="submit" onclick="window.location.href='#result'">Prediksi</button>
+          <button class="btn btn-primary btnPredict" type="submit">Prediksi</button>
+          <div class ="hasil-predict" style="display: {{display}}; margin-top: 30px;">
+            <div class="card">
+              <div class="card-header">Model 1</div>
+              <div class="card-body">
+                  <p>Hasil Prediksi : {{result}} </p>
+                  <p>Probabilitas : {{prob}}%</p>
+                  <p>Probabilitas serangan jantung : {{ prob_0 }}%</p>
+                  <p>Probabilitas tidak serangan jantung : {{ prob_1 }}%</p>
+              </div>
+            </div>
+            <div class="card" style="margin-top: 20px;">
+              <div class="card-header">Model 2</div>
+              <div class="card-body">
+                  <p>Hasil Prediksi : {{result2}} </p>
+                  <p>Probabilitas : {{prob1}}%</p>
+                  <p>Probabilitas serangan jantung : {{ prob_0_2 }}%</p>
+                  <p>Probabilitas tidak serangan jantung : {{ prob_1_2 }}%</p>
+              </div>
+            </div>
+            <div class="card" style="margin-top: 20px;">
+              <div class="card-header">Model 3</div>
+              <div class="card-body">
+                  <p>Hasil Prediksi : {{result3}} </p>
+                  <p>Probabilitas : {{prob2}}%</p>
+                  <p>Probabilitas serangan jantung : {{ prob_0_3 }}%</p>
+                  <p>Probabilitas tidak serangan jantung : {{ prob_1_3 }}%</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </form>
   </div>
 </section>
 
-  <section id="result">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Bagaimana Hasilnya ?</h2>
-          <hr class="my-4">
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="col-md-8 mx-auto text-center">
-        <!-- Edit Hasil Prediksi Tampilan sementara-->
-        <p class="mb-5">Model 1 dengan 294 baris dataset dan akurasi {{ acc1 }}% </p>
-        <p class="mb-5">Hasil Prediksi didapatkan {{ result }}</p>
-        <p class="mb-5">Probabilitas serangan jantung :  {{ prob_0 }}%</p>
-        <p class="mb-5">Probabilitas tidak serangan jantung :  {{ prob_1 }}%</p>
-      </div>
-     <div class="col-md-8 mx-auto text-center">
-        <!-- Edit Hasil Prediksi Tampilan sementara-->
-        <p class="mb-5">Model 2 dengan 250 baris dataset dan akurasi {{ acc2 }}% </p>
-        <p class="mb-5">Hasil Prediksi didapatkan {{ result2 }}</p>
-        <p class="mb-5">Probabilitas serangan jantung :  {{ prob_0_2 }}%</p>
-        <p class="mb-5">Probabilitas tidak serangan jantung :  {{ prob_1_2 }}%</p>
-      </div>
-      <div class="col-md-8 mx-auto text-center">
-        <!-- Edit Hasil Prediksi Tampilan sementara-->
-        <p class="mb-5">Model 3 dengan 200 baris dataset dan akurasi {{ acc3 }}% </p>
-        <p class="mb-5">Hasil Prediksi didapatkan {{ result3 }}</p>
-        <p class="mb-5">Probabilitas serangan jantung :  {{ prob_0_3 }}%</p>
-        <p class="mb-5">Probabilitas tidak serangan jantung :  {{ prob_1_3 }}%</p>
-      </div>
-    </div>
-  </section>
-
+  
 <section style="background-color:#e30606" id="conclusion">
   <div class="container text-white">
     <div class="row">

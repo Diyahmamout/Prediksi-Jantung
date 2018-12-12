@@ -1,9 +1,6 @@
-$(document).ready(function(){
-    $(".btn-knn").click(function(){
-        $(".knn-form").slideToggle("slow");
-    });
-
-    $(".btn-bayes").click(function(){
-        $(".bayes-form").slideToggle("slow");
-    });
+$(".btnPredict").on("click", function(e){
+	 $.ajax("{{ url_for('/')}}").done(function(reply) {
+	 	$("#predict").html(reply);
+	 });
+	 $(".hasil-predict").first().slideToggle("slow");
 });
