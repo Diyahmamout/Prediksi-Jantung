@@ -64,7 +64,7 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h1 class="text-uppercase">
-            <strong>Pengujian Prediksi Penyakit Jantung</strong>
+            <strong>Prediksi Potensi Serangan Jantung</strong>
           </h1>
           <hr>
         </div>
@@ -82,7 +82,8 @@
         <div class="col-lg-8 mx-auto text-center " style="padding-bottom: 30px">
           <h2 class="section-heading text-black">Data Apa yang Kita Gunakan ?</h2>
           <hr class="my-4">
-          <p>Data yang digunakan merupakan dataset prediksi serangan jantung. Jumlah dataset yang digunakan sebanyak 294, 221 digunakan sebagai data train, dan 73 digunakan sebagai data uji.</p>
+          <p>Data yang digunakan merupakan dataset prediksi serangan jantung. Jumlah dataset yang digunakan ada sebanyak 294 data untuk
+          berbagai macam pengujian. Setiap pengujian memakai 75% dari dataset sebagai Data Train dan 25% sebagai Data Test.</p>
         </div>
       </div>
       <h4>Contoh Sample Data</h4>
@@ -130,33 +131,33 @@
           </tr>
           <tr>
             <td>1</td>
-            <td>Umur</td>
-            <td>Umur dalam tahun</td>
+            <td>Usia</td>
+            <td>Usia dalam tahun</td>
           </tr>
           <tr>
             <td>2</td>
             <td>Sex</td>
-            <td>Jenis Kelamin; 1 : male , 0 : female</td>
+            <td>Jenis Kelamin; 1 : pria , 0 : wanita</td>
           </tr>
           <tr>
             <td>3</td>
             <td>cp</td>
-            <td>Jenis nyeri dada; 1: khas angina, 2: angina atipikal, 3: nyeri non-angina, 4: tanpa gejala</td>
+            <td>Jenis nyeri dada; 1: angina tipikal, 2: angina atipikal, 3: nyeri non-angina, 4: tanpa gejala</td>
           </tr>
           <tr>
             <td>4</td>
             <td>trestbps</td>
-            <td>Tekanan Darah (dalam satuan mm / Hg saat masuk rumah sakit</td>
+            <td>Tekanan Darah ketika rileks (dalam satuan mm / Hg saat masuk rumah sakit</td>
           </tr>
           <tr>
             <td>5</td>
             <td>Chol</td>
-            <td>Serum kolestoral dalam mg / dl</td>
+            <td>Serum kolestoral atau total kolestrol darah dalam mg / dl</td>
           </tr>
           <tr>
             <td>6</td>
             <td>fbs</td>
-            <td>Gula darah > 120 mg / dl</td>
+            <td>Gula darah ketika berpuasa 1 = > 120 mg / dl, 0 = < 120 mg / dl</td>
           </tr>
           <tr>
             <td>7</td>
@@ -172,12 +173,12 @@
           <tr>
             <td>9</td>
             <td>exang</td>
-            <td>Menyebabkan angina (sesak pada dada); 0 : tidak, 1 : ya</td>
+            <td>Sensasi sakit di dada keika olahraga (sesak pada dada); 0 : tidak, 1 : ya</td>
           </tr>
           <tr>
             <td>10</td>
             <td>oldpeak</td>
-            <td>Depresi ST diinduksi oleh latihan relatif untuk beristirahat</td>
+            <td>ST Deppresion = temuan pada elektrokardiogram ketika jejak segmen ST rendah di bawah batas ambang secara normal</td>
           </tr>
           <tr>
             <td>11</td>
@@ -255,7 +256,7 @@
             <label for="inputNyeriData" class="col-sm-3 col-form-label" style="text-align: right;">Jenis Nyeri Dada</label>
             <div class="form-group col-sm-6">
               <select class="form-control" id="exampleFormControlSelect1" name="nyeri">
-                <option value="1">1 : Khas angina</option>
+                <option value="1">1 : Angina tipikal</option>
                 <option value="2">2 : Angina atipikal</option>
                 <option value="3">3 : Nyeri non-angina</option>
                 <option value="4">4 : Tanpa Gejala</option>
@@ -278,8 +279,8 @@
             <label for="inputGulaDarah" class="col-sm-3 col-form-label" style="text-align: right;">Gula Darah</label>
             <div class="form-group col-sm-6">
               <select class="form-control" id="exampleFormControlSelect1" name="guldar">
-                <option value="0">0 : Tidak</option>
-                <option value="1">1 : Ya</option>
+                <option value="0">0 : kurang dari 120</option>
+                <option value="1">1 : lebih dari 120</option>
               </select>
             </div>
           </div>
@@ -358,19 +359,7 @@
       <div class="col-lg-8 mx-auto text-center">
         <h2 class="section-heading">Kesimpulan</h2>
         <hr class="my-4 light">
-        <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4 ml-auto text-center">
-        <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-        <p>123-456-6789</p>
-      </div>
-      <div class="col-lg-4 mr-auto text-center">
-        <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
-        <p>
-          <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
-        </p>
+        <p class="mb-5">Aplikasi klasifikasi potensi serangan jantung menggunakan metode naïve bayes telah berhasil dibuat. Pengujian akurasi terhadap jumlah dataset berhasil dilakukan dengan akurasi tertinggi 89% pada model 1 dengan jumlah 294 data. Serta Pengguna dapat melakukan klasifikasi potensi serangan jantung secara lebih mudah dan lebih cepat</p>
       </div>
     </div>
   </div>
