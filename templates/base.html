@@ -82,7 +82,7 @@
         <div class="col-lg-8 mx-auto text-center " style="padding-bottom: 30px">
           <h2 class="section-heading text-black">Data Apa yang Kita Gunakan ?</h2>
           <hr class="my-4">
-          <p>Data yang digunakan merupakan dataset prediksi serangan jantung. Jumlah dataset yang digunakan ada sebanyak 294 data untuk
+          <p>Data yang digunakan merupakan dataset prediksi serangan jantung. Jumlah dataset yang digunakan ada sebanyak {{jumlah_data}} data untuk
           berbagai macam pengujian. Setiap pengujian memakai 75% dari dataset sebagai Data Train dan 25% sebagai Data Test.</p>
         </div>
       </div>
@@ -203,21 +203,21 @@
         <div class="card">
           <div class="card-header">Model 1</div>
           <div class="card-body">
-              <p>Dataset yang digunakan sebanyak 294</p>
+              <p>Dataset yang digunakan sebanyak {{jumlah_data}}</p>
               <p>Akurasi : {{ acc1 }}%</p>
           </div>
         </div>
         <div class="card" style="margin-top: 20px;">
           <div class="card-header">Model 2</div>
           <div class="card-body">
-              <p>Dataset yang digunakan sebanyak 250</p>
+              <p>Dataset yang digunakan sebanyak {{jumlah_data_250}}</p>
               <p>Akurasi : {{ acc2 }}%</p>
           </div>
         </div>
         <div class="card" style="margin-top: 20px;">
           <div class="card-header">Model 3</div>
           <div class="card-body">
-              <p>Dataset yang digunakan sebanyak 200</p>
+              <p>Dataset yang digunakan sebanyak {{jumlah_data_200}}</p>
               <p>Akurasi : {{ acc3 }}%</p>
           </div>
         </div>
@@ -229,7 +229,7 @@
     <div class="container-fluid p-0 text-center">
       <h2 class="section-heading text-center">Prediksi Sekarang</h2>
       <hr class="light my-4">
-      <form id="upload-form" action="{{ url_for('index', _anchor='predict') }}" method="POST" >
+      <form id="upload-form" action="{{ url_for('index', _anchor='hasil-prediksi') }}" method="POST" >
         <div class="container">
           <div class="form-group row ">
             <label for="inputNama" class="col-sm-3 col-form-label" style="text-align: right;">Nama</label>
@@ -317,7 +317,8 @@
         </div>
         <div class="container">
           <button class="btn btn-primary btnPredict" type="submit">Prediksi</button>
-          <div class ="hasil-predict" style="display: {{display}}; margin-top: 30px;">
+          <section id="hasil-prediksi">
+           <div class ="hasil-predict" style="display: {{display}}; margin-top: 30px;">
             <div class="card">
               <div class="card-header">Model 1</div>
               <div class="card-body">
@@ -345,7 +346,8 @@
                   <p>Probabilitas tidak serangan jantung : {{ prob_1_3 }}%</p>
               </div>
             </div>
-          </div>
+          </div> 
+          </section>
         </div>
       </div>
     </form>

@@ -28,7 +28,9 @@ def index():
 	clf_200 = GaussianNB()
 
 	jumlah_data_baru = medic.shape[0] - 293
-	print("JUMLAHHHHHH", jumlah_data_baru)
+	jumlah_data = 294+jumlah_data_baru
+	jumlah_data_250 = 250+jumlah_data_baru
+	jumlah_data_200 = 200+jumlah_data_baru
 	y_250 = medic.iloc[:250+jumlah_data_baru,10].values.astype('int32')
 	x_250 = (medic.iloc[:250+jumlah_data_baru,0:10].values).astype('int32')
 	(xTrain250, xTest250, yTrain250, yTest250) = train_test_split(x_250, y_250, test_size = 0.25, random_state = 42)
@@ -188,13 +190,14 @@ def index():
 			prob2 = round(prob_200*100, 2), prob_0 = round(float(res_prob_1)*100, 2), prob_1 = round(float(res_prob_2)*100, 2),
 			result2 = diagnose2, prob_0_2 = round(float(res_prob_250_1)*100, 2), prob_1_2 = round(float(res_prob_250_2)*100, 2), 
 			result3 = diagnose3, prob_0_3 = round(float(res_prob_200_1)*100, 2), prob_1_3 = round(float(res_prob_200_2)*100,2), result4 = diagnose4, prob_0_4 = res_prob_100_1, prob_1_4 = res_prob_100_2, 
-			acc1 = accuracy, acc2 = accuracy_250, acc3 = accuracy_200, data_sample=enumerate(data_sample), display=display )
+			acc1 = accuracy, acc2 = accuracy_250, acc3 = accuracy_200, data_sample=enumerate(data_sample), display=display, jumlah_data=jumlah_data
+			,jumlah_data_250=jumlah_data_250, jumlah_data_200=jumlah_data_200)
 
 	else:	
 		
 		display = "none"	
 
-		return render_template("base.html", acc1 = accuracy, acc2 = accuracy_250, acc3 = accuracy_200, data_sample=enumerate(data_sample), display=display)
+		return render_template("base.html", acc1 = accuracy, acc2 = accuracy_250, acc3 = accuracy_200, data_sample=enumerate(data_sample), display=display, jumlah_data=jumlah_data ,jumlah_data_250=jumlah_data_250, jumlah_data_200=jumlah_data_200)
 
 if __name__ == "__main__":
 	app.run(debug=True)
